@@ -47,12 +47,12 @@ We create a bufor for our data, which are matched elements horizontally and matc
 let rowsMatched = columnsMatched = [];
 ```
 
-1. During visiting each node(cell), we need to compare it's value with the value of it's left neighbour.If the values are the same we need to add coordinates of the node, we were comparing to, to the buffor variable(rowsMatched). </br>
+1. During visiting each node(cell), we need to compare it's value with the value of it's left neighbour.If the values are the same we need to add coordinates of the node, we were comparing to, to the buffor variable(_rowsMatched_). </br>
 Repeat this step until we find value which is different than current a<sub>i,j</sub> node or we reach left border of A matrix. </br>
-2. If value on the left of current a<sub>i,j</sub> node is different, we check if our buffor variable's length is greater or equal to 3, if yes we can change values of elements within rowsMatched to 0.</br>
-Otherwise do the same with current a<sub>i,j</sub> node, but this time check it vertically.</br>
-3. If we went from a<sub>n,m</sub> to a<sub>0,0</sub> checking for matches, we need now to check if there are gaps(0, which stands for empty cell) between non-zero values in the array. If there are, non-zero values should be dropping on the bottom, until it reaches another non-zero value or lowest array's row.  </br>
-4.The problem is, that after dropping gems, it's still possible, that new situation on the board meets with another 3 or more gems in a row, the solution to this problem is to run steps, described in paragraphs 1-3 over and over again, until there will be no gaps between non-zero values. </br>
+2. If value on the left of current a<sub>i,j</sub> node is different, we check if our buffor variable's length is greater or equal to 3, if yes we can change values of elements within _rowsMatched_ to 0.</br>
+3. Otherwise do the same(steps 1-2) with current a<sub>i,j</sub> node, but this time check it vertically.</br>
+4. If we went from a<sub>n,m</sub> to a<sub>0,0</sub> checking for matches, we need now to check, if there are gaps(0, which stands for empty cell) between non-zero values in the array. If there are, non-zero values should be dropping on the bottom, until it reaches another non-zero value or lowest array's row.  </br>
+5.The problem is, that after dropping gems, it's still possible, that new situation on the board meets with another 3 or more gems in a row, the solution to this problem is to run steps, described in paragraphs 1-4 over and over again, until there will be no gaps between non-zero values. </br>
 
 That all means, that complexity of this algorithm is **polynomial**.
     

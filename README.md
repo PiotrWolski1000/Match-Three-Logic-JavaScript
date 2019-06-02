@@ -20,7 +20,7 @@ We pass 2D array as a argument to solveRiddle function. Size of an array may be 
 [... ... ... ... ... ... ... ] </br>
 [a<sub>n0</sub> a<sub>n1</sub> a<sub>n2</sub> ... a<sub>nm</sub>] </br>
 
-## A way of iteration over our **A** array:
+## A way of iteration over array:
 We have following array: 
 ```javascript
 let A = [[3 8 7], 
@@ -29,7 +29,7 @@ let A = [[3 8 7],
 ```
 Iteration over this matrix, in my case would look like this: _1, 4, 2, 2, 2, 2, 7, 8, 3._ It's easy to notice, that we're iterating array **backwards**
 
-And this how the loops are looking, written in javascript:
+And this how the loops are looking, written in JS:
 ```javascript
 for(let i = matrix.length-1; i >= 0; i--)
         {

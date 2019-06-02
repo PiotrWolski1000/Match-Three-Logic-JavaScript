@@ -13,12 +13,12 @@ Function was tested in Node **v11.1.0**.
 We pass 2D array as a argument to solveRiddle function. Size of an array may be different than just n x n, let A[n][m] be a 2D array, where n is amount of rows and m is amount of columns of our matrix. </br>
 ## 2D array schema, we can present as follows: 
 
-    [a<sub>00</sub> a<sub>01</sub> a<sub>02</sub> ... a<sub>0m</sub>]
-    [a<sub>10</sub> a<sub>11</sub> a<sub>12</sub> ... a<sub>1m</sub>]
-    [a<sub>20</sub> a<sub>21</sub> a<sub>22</sub> ... a<sub>2m</sub>]
-    [... ... ... ... ... ... ... ]
-    [... ... ... ... ... ... ... ]
-    [a<sub>n0</sub> a<sub>n1</sub> a<sub>n2</sub> ... a<sub>nm</sub>]
+[a<sub>00</sub> a<sub>01</sub> a<sub>02</sub> ... a<sub>0m</sub>]
+[a<sub>10</sub> a<sub>11</sub> a<sub>12</sub> ... a<sub>1m</sub>]
+[a<sub>20</sub> a<sub>21</sub> a<sub>22</sub> ... a<sub>2m</sub>]
+[... ... ... ... ... ... ... ]
+[... ... ... ... ... ... ... ]
+[a<sub>n0</sub> a<sub>n1</sub> a<sub>n2</sub> ... a<sub>nm</sub>]
 
 ## A way of iteration over our **A** array:
 We have following array: 
@@ -27,8 +27,18 @@ let A = [[3 8 7],
          [2 2 2], 
          [2 4 1]] 
 ```
-Iteration over this matrix, in my case would look like this: _1, 4, 2, 2, 2, 2, 7, 8, 3._
+Iteration over this matrix, in my case would look like this: _1, 4, 2, 2, 2, 2, 7, 8, 3._ It's easy to notice, that we're iterating array **backwards**
 
+And this how the loops are looking, written in javascript:
+```javascript
+for(let i = matrix.length-1; i >= 0; i--)
+        {
+            for(let j = matrix[i].length-1; j >= 0; j--)
+            {
+                console.log(matrix[i][j])
+            }
+        }
+```
 ## Algorithm
 
 We create a bufor for our data, which are matched elements horizontally and matched elements vertically.
